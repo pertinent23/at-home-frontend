@@ -1,0 +1,225 @@
+@import '../../theme.scss';
+
+:host{
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  left: 0px;
+  top: 0px;
+  background-color: $isabelline;
+}
+
+nav, footer{
+  height: 70px;
+  background-color: $white;
+  width: 100%;
+  display: flex;
+}
+
+nav{
+  box-sizing: border-box;
+  padding-left: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav button{
+  outline: none;
+  border: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $silver;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+nav button i{
+  color: $foreground;
+  font-size: 2.1em;
+}
+
+nav span{
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $foreground;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.no-message-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-message-container i{
+  font-size: 4em;
+  color: $silver;
+}
+
+.no-message-container span{
+  font-size: 1.5em;
+  color: $silver;
+  margin-top: 40px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.message-container{
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.message-container-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.message-item{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0px 5px;
+  margin-bottom: 3px;
+}
+
+.message-item.other{
+  flex-direction: row;
+}
+
+.message-item i{
+  display: inline-block;
+  font-size: 1.3em;
+  color: $silver;
+  margin-left: 10px;
+}
+
+.message-item.nested{
+  padding-right: 40px;
+}
+
+.message-item.nested.other{
+  padding-right: 0px;
+  padding-left: 40px;
+}
+
+.message-item.nested i{
+  display: none;
+}
+
+.message-item.other i{
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+.message-item .message-item-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.message-item.other .message-item-content{
+  align-items: flex-start;
+}
+
+.message-item .message-item-content p{
+  max-width: 70%;
+  background-color: $sandy-brown;
+  padding: 15px;
+  border-radius: 20px;
+  border-bottom-right-radius: 0px;
+  margin: 0px;
+  font-size: 0.9em;
+}
+
+.message-item.other .message-item-content p{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 20px;
+  background-color: $silver;
+}
+
+.message-item .message-item-content span{
+  font-size: 0.8em;
+  color: $silver;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.message-item.nested .message-item-content span{
+  display: none;
+}
+
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+form input, form input:focus{
+  height: 38px;
+  border-radius: 35px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  padding-left: 15px;
+  border: 1px solid $silver;
+  outline: none;
+  color: $foreground;
+}
+
+form button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: $silver;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+form button.active{
+  background-color: $sandy-brown;
+}
+
+form button i{
+  color: $white;
+  font-size: 1.1em;
+}

@@ -1,0 +1,22 @@
+<section>
+    <app-nav-bar title="Admin" (clicked)="goBack()" />
+</section>
+<form>
+    <label for="video">
+        <i class="bi bi-folder-symlink-fill"></i>
+    </label>
+    <div class="loader" *ngIf="progressBar">
+        <div class="loader-bar" [style.width]="progressBar + '%'"></div>
+    </div>
+    <input type="file" name="video" id="video">
+    <label for="user">Selctionner un utilisateur</label>
+    <select name="user" id="user">
+        <option value="1">user1</option>
+        <option value="1">user2</option>
+        <option value="1">user3</option>
+    </select>
+    <button type="submit">
+        <i class="bi bi-send-check-fill"></i>
+        <span>Envoyer</span>
+    </button>
+</form>

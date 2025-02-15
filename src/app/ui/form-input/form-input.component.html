@@ -1,0 +1,10 @@
+<input
+  [type]="type"
+  [id]="name"
+  (change)="onInputChange($event)"
+  (input)="onInputChange($event)"
+  (blur)="onTouched()"
+  [placeholder]="placeholder"
+  [class.invalid]="!valid"
+>
+<label [htmlFor]="name">{{ label }}</label>

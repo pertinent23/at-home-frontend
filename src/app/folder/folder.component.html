@@ -1,0 +1,41 @@
+<app-nav-bar title="Admin" (clicked)="goBack()" />
+<section class="item-container">
+  <section class="no-record" *ngIf="!source.length">
+    <i class="bi bi-camera-video-off-fill"></i>
+    <span>Pas d'exercice fait pour le moment</span>
+  </section>
+  <section class="record" *ngIf="source.length">
+    <video [src]="source" controls></video>
+  </section>
+  <section class="folder-detail">
+    <i class="bi bi-person-circle"></i>
+    <div>
+      <span>Nom:</span>
+      <p>{{ firstname }}</p>
+    </div>
+    <div>
+      <span>Prénom:</span>
+      <p>{{ lastname }}</p>
+    </div>
+    <div>
+      <span>Age:</span>
+      <p>{{ age }}</p>
+    </div>
+    <div>
+      <span>Nom d'utilisateur:</span>
+      <p>{{ username }}</p>
+    </div>
+    <div>
+      <span>Dernier exercice ajouté:</span>
+      <p> {{lastdate }}</p>
+    </div>
+    <button (click)="sendMessage()">
+      <i class="bi bi-folder-plus"></i>
+      <span> Ajouter un exercice </span>
+    </button>
+    <button (click)="addExercise()">
+      <i class="bi bi-chat-left-quote-fill"></i>
+      <span> Envoyer un message </span>
+    </button>
+  </section>
+</section>

@@ -1,0 +1,49 @@
+<section class="content-app">
+  <section class="content-app-main-video" (click)="pauseRecord()">
+    <video [src]="getSource(1)" class="main-video" [class.main-stream]="isMainStream(1)"></video>
+  </section>
+  <section class="content-app-mini-video" (click)="toogleSource()">
+    <video [src]="getSource(2)" class="mini-video" [class.main-stream]="isMainStream(2)"></video>
+  </section>
+  <section class="content-app-buttons">
+    <button class="app-button" *ngIf="isStartButtonVisible()" (click)="startRecording()">
+      <i class="bi bi-play-circle-fill"></i>
+    </button>
+    <button class="app-button" *ngIf="isPaused" (click)="unpauseRecord()">
+      <i class="bi bi-pause-circle-fill"></i>
+    </button>
+    <button class="app-button" *ngIf="isPaused" (click)="stopRecord()">
+      <i class="bi bi-send-fill"></i>
+    </button>
+  </section>
+  <section class="timer">
+    <div class="timer-content" (click)="pauseRecord()">
+      <div class="timer-content-decoration" [class.animate]="isPlaying && !isPaused && !isSending"></div>
+      <div class="timer-content-data">
+        <span>{{ hours }}</span>
+        <a>:</a>
+        <span>{{ minutes }}</span>
+        <a>:</a>
+        <span>{{ seconds }}</span>
+      </div>
+    </div>
+  </section>
+</section>
+<section class="content-error" *ngIf="isError">
+  <span *ngIf="!isAccessRefused">L'appareil n'est pas supporté, <a href="/home">page principale</a></span>
+  <span *ngIf="isAccessRefused">Accès à la caméra refusé par l'utilisateur, <a href="/home">page principale</a></span>
+</section>
+<section class="content-send-data" *ngIf="isSending">
+  <div class="content-send-form">
+    <span>Laisser un commentaire: </span>
+    <textarea class="content-send-comment" placeholder="Az:.." [(ngModel)]="comment"></textarea>
+    <div class="content-send-buttons">
+      <button class="app-button" (click)="cancelSend()">
+        <i class="bi bi-x"></i>
+      </button>
+      <button class="app-button" (click)="send()">
+        <i class="bi bi-send-fill"></i>
+      </button>
+    </div>
+  </div>
+</section>

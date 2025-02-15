@@ -1,0 +1,17 @@
+<section class="no-exercise" *ngIf="!isExerice">
+  <div>
+    <i class="bi bi-camera-video-off-fill"></i>
+  </div>
+  <span>Pas d'exercice pour le moment</span>
+</section>
+
+
+<section class="exercise" *ngIf="isExerice">
+  <div class="content-video">
+    <video src="video/my-video.mp4"></video>
+  </div>
+  <button type="button" (click)="onStart()">
+    <i class="bi bi-play-circle-fill"></i>
+    <span>Commencer</span>
+  </button>
+</section>

@@ -1,0 +1,98 @@
+@import '../../theme.scss';
+
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 80px);
+  z-index: 5;
+}
+
+.exercise,
+.no-exercise{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.no-exercise div{
+  height: 170px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.no-exercise div::before{
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  opacity: 0.4;
+}
+
+.no-exercise div i{
+  color: $outer-space;
+  font-size: 3em;
+}
+
+.no-exercise span{
+  margin-top: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.exercise .content-video{
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 3px solid $sandy-brown;
+}
+
+.exercise .content-video video{
+  width: 100%;
+}
+
+.exercise button{
+  height: 70px;
+  width: auto;
+  border-radius: 30px;
+  background-color: $sandy-brown;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0px 30px;
+}
+
+.exercise button i{
+  font-size: 1.8em;
+  margin: 0px;
+}
+
+.exercise button span{
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 0.9em;
+}

@@ -1,0 +1,54 @@
+@import "../../theme.scss";
+
+:host{
+  padding: 50px 25px;
+}
+
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0px;
+  margin: 0px;
+  justify-content: space-between;
+}
+
+.image-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img{
+  width: 200px;
+  height: 200px;
+}
+
+.image-container span{
+  display: block;
+  margin-bottom: 40px;
+  max-width: 75%;
+  text-align: center;
+}
+
+.content-error{
+  display: flex;
+  margin: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content-error span{
+  display: block;
+  max-width: 70%;
+  color: $red;
+  font-weight: 0.9em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

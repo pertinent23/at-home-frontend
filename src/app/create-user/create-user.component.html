@@ -1,0 +1,45 @@
+<app-nav-bar title="Admin" (clicked)="goBack()" />
+<app-form [formGroup]="loginForm">
+  <section class="image-container">
+    <span> Création du dossier d'un nouveau patient </span>
+  </section>
+  <app-form-input
+    label="Nom d'utilisateur"
+    name="username"
+    type="text"
+    formControlName="username"
+    placeholder="Az:"
+  />
+  <br><br>
+  <app-form-input
+    label="Nom"
+    name="firstname"
+    type="text"
+    formControlName="firstname"
+    placeholder="Az:"
+  />
+  <br><br>
+  <app-form-input
+    label="Prénom"
+    name="lastname"
+    type="text"
+    formControlName="lastname"
+    placeholder="Az:"
+  />
+  <br><br>
+  <app-form-input
+    label="âge"
+    name="age"
+    type="number"
+    formControlName="age"
+    placeholder="Az:"
+  />
+  <section class="content-error" *ngIf="isError">
+    <span>Email ou mot de passe incorrect</span>
+  </section>
+  <br>
+  <section class="button-container">
+    <app-form-button type="reset" value="Annuler" (clicked)="goBack()"/>
+    <app-form-button type="submit" value="Connexion" (clicked)="submit()"/>
+  </section>
+</app-form>

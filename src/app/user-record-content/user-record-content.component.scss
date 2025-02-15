@@ -1,0 +1,248 @@
+@import '../../theme.scss';
+
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 75px);
+  z-index: 5;
+  overflow: hidden;
+}
+
+.content-app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content-app-mini-video,
+.content-app-main-video{
+  background-color: $foreground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content-app-mini-video video,
+.content-app-main-video video{
+  width: 100%;
+  display: block;
+}
+
+.content-app-mini-video{
+  position: absolute;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 3px solid $white;
+  right: 10px;
+  top: 10px;
+  width: 90px;
+  height: 130px;
+  z-index: 20;
+  box-shadow: 0px 0px 5px $foreground;
+  cursor: pointer;
+}
+
+.content-app-buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  z-index: 30;
+}
+
+.app-button{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: $white;
+  color: $sandy-brown;
+  margin-right: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.app-button i{
+  font-size: 1.4em;
+  color: $sandy-brown;
+}
+
+.timer{
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+}
+
+.timer .timer-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 130px;
+  background-color: $white;
+  border-radius: 100%;
+  transform: scale(0.6);
+}
+
+.timer .timer-content .timer-content-decoration{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  z-index: 30;
+  border-top-color: $sandy-brown;
+  border-bottom-color: $sandy-brown;
+  transform: rotate(0deg);
+}
+
+.timer .timer-content .timer-content-decoration.animate{
+  animation: rotatationAnimation 3s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotatationAnimation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.timer .timer-content .timer-content-data{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.8em;
+  color: $sandy-brown;
+  font-weight: bold;
+  z-index: 20;
+  text-shadow: 0px 0px 0.1px $foreground;
+}
+
+.timer .timer-content .timer-content-data span{
+  display: inline-block;
+  font-size: 0.5em !important;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.timer .timer-content .timer-content-data a{
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 4px;
+  vertical-align: middle;
+}
+
+.content-send-data,
+.content-send-data::before,
+.content-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: $foreground;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 120;
+}
+
+.content-error span{
+  display: block;
+  max-width: 80%;
+  color: $white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.content-error span a{
+  outline: none;
+  color: $white;
+  text-decoration: underline;
+}
+
+
+.content-send-data{
+  background-color: transparent;
+}
+
+.content-send-data::before{
+  content: '';
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.content-send-form{
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 300px;
+  background-color: $white;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content-send-form span{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.content-send-form textarea{
+  margin-top: 10px;
+  height: 120px;
+  border-radius: 5px;
+  border: 1px solid $silver;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.content-send-buttons{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.content-send-buttons button:nth-child(even){
+  background-color: $sandy-brown;
+  margin-right: 0px;
+}
+
+.content-send-buttons button:nth-child(even) i{
+  color: $white;
+}
+
+.content-send-buttons button:nth-child(odd){
+  border: 2px solid $sandy-brown;
+}
+
+.content-send-buttons button:nth-child(odd) i{
+  font-size: 1.7em;
+}

@@ -1,0 +1,95 @@
+@import '../../theme.scss';
+
+:host{
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  left: 0px;
+  top: 0px;
+  background-color: $isabelline;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between;
+  border-bottom: 1px solid $silver;
+  box-shadow: 0px 0px 5px $silver;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  height: 75px;
+  background-color: $background;
+}
+
+.navigation .navigation-head{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation .navigation-head img{
+  height: 70px;
+  width: 70px;
+}
+
+.navigation .navigation-head span{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: $outer-space;
+}
+
+.navigation-button-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation-button{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-right: 20px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.navigation-button::before{
+  z-index: 5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: $silver;
+  opacity: 0.3;
+  content: '';
+}
+
+.navigation-button i{
+  font-size: 1.1em;
+  transition-duration: 0.5s;
+}
+
+.navigation-button:hover::before{
+  background-color: $sandy-brown;
+}
+
+.navigation-button:hover i{
+  color: $sandy-brown;
+}

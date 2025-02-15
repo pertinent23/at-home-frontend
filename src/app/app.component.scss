@@ -1,0 +1,24 @@
+:host, .main-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+:host{
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container{
+  overflow: auto;
+  max-width: 500px;
+  flex-direction: column;
+}
+
+.main-container-data{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}

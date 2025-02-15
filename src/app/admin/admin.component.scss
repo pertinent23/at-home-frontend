@@ -1,0 +1,90 @@
+@import '../../theme.scss';
+
+:host{
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  left: 0px;
+  top: 0px;
+  background-color: $isabelline;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-container a{
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  width: calc(50% - 30px);
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  overflow: hidden;
+  outline: none;
+  border-radius: 5px;
+  text-decoration: none;
+  border-bottom: 4px solid $sandy-brown;
+}
+
+.item-container a span{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.item-container a span::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  background-color: $sandy-brown;
+  left: 0px;
+  top: 0px;
+  opacity: 0.3;
+}
+
+.item-container a span i{
+  font-size: 2.5em;
+  color: $sandy-brown;
+}
+
+.item-container a p{
+  color: $silver;
+  text-decoration: none;
+  text-align: center;
+  height: 70px;
+}
+
+
+@media screen and (max-width: 350px){
+  .item-container a span{
+    height: 80px;
+    width: 80px;
+  }
+
+  .item-container a span i{
+    font-size: 2em;
+  }
+
+  .item-container a p{
+    font-size: 0.9em;
+  }
+}

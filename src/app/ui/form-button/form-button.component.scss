@@ -1,0 +1,28 @@
+@import "../../../theme.scss";
+
+
+:host{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  padding: 15px 35px;
+  border-radius: 4px;
+  border: 3px solid $sandy-brown;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type=submit]{
+  background-color: $sandy-brown;
+  color: $white;
+}
+
+button[type=reset]{
+  background-color: $white;
+  color: $sandy-brown;
+}

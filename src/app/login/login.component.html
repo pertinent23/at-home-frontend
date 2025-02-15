@@ -1,0 +1,29 @@
+<app-form [formGroup]="loginForm">
+  <section class="image-container">
+    <img src="icon.png" alt="mon logo">
+    <span> Bienvenue sur à la maison, votre application de bien être! </span>
+  </section>
+  <app-form-input
+    label="Nom d'utilisateur"
+    name="username"
+    type="text"
+    formControlName="username"
+    placeholder="Az:"
+  />
+  <br><br>
+  <app-form-input
+    label="Mot de passe"
+    name="password"
+    type="password"
+    formControlName="password"
+    placeholder="...."
+  />
+  <section class="content-error" *ngIf="isError">
+    <span>Email ou mot de passe incorrect</span>
+  </section>
+  <br>
+  <section class="button-container">
+    <app-form-button type="submit" value="Connexion" (clicked)="submit()"/>
+    <app-form-button type="reset" value="Annuler"/>
+  </section>
+</app-form>
