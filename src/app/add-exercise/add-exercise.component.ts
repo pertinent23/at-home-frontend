@@ -13,11 +13,11 @@ export class AddExerciseComponent implements OnInit {
   video: string = '';
 
   ngOnInit(): void {
-      document.getElementById('video')?.addEventListener('change', (el) => {
-        if (el instanceof HTMLSelectElement) {
-          console.log(el)
-        }
-      });
+    document.getElementById('video')?.addEventListener('change', (el) => {
+      if (el instanceof HTMLSelectElement) {
+        console.log(el)
+      }
+    });
   }
 
   goBack() {
