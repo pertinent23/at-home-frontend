@@ -13,7 +13,7 @@ export class ApiService {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: "http://at-home-078d6b8b36e8.herokuapp.com/api",
+      baseURL: "https://at-home-078d6b8b36e8.herokuapp.com/api",
       withCredentials: true,
       timeout: 15000,
       headers: {

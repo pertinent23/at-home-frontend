@@ -14,6 +14,6 @@ export default `<!doctype html>
 <style>:root{--background:#ffffff;--foreground:#171717;--sandy-brown:#FEA973ff;--outer-space:#464745ff;--white:#FFFFFFff;--silver:#ABACABff;--isabelline:#EBE3DDff}*{position:relative;font-family:Funnel Display,serif;font-optical-sizing:auto;font-style:normal}html{display:flex;justify-content:center;align-items:center;width:100%;height:100%;margin:0;padding:0}body{color:var(--foreground);background:var(--background);font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:row;justify-content:center;width:100%;height:100%;overflow:hidden;margin:0;padding:0}</style><link rel="stylesheet" href="styles-U67AT7WN.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-U67AT7WN.css"></noscript></head>
 <body ngcm="">
   <app-root></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-PDZLIPXI.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-6QAY2TGK.js" type="module"></script></body>
 </html>
 `;
