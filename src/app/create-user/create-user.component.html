@@ -35,11 +35,11 @@
     placeholder="Az:"
   />
   <section class="content-error" *ngIf="isError">
-    <span>Email ou mot de passe incorrect</span>
+    <span>{{ error }}</span>
   </section>
   <br>
   <section class="button-container">
     <app-form-button type="reset" value="Annuler" (clicked)="goBack()"/>
-    <app-form-button type="submit" value="Connexion" (clicked)="submit()"/>
+    <app-form-button type="submit" value="Créer" (clicked)="submit()"/>
   </section>
 </app-form>

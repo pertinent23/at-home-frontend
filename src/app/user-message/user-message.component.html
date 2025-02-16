@@ -9,7 +9,7 @@
     <i class="bi bi-chat-quote-fill"></i>
     <span> Pas de messages pour le moment</span>
   </section>
-  <section class="message-container">
+  <section class="message-container"  *ngIf="messages.length != 0">
     <section class="message-container-content">
       <div
         class="message-item"
@@ -20,7 +20,7 @@
         <i class="bi bi-person-circle"></i>
         <div class="message-item-content">
           <p>{{item.body}}</p>
-          <span>{{getHourFromDate(item.createdAt)}}</span>
+          <span>{{getHourFromDate(item.sendAt)}}</span>
         </div>
       </div>
 
@@ -36,9 +36,9 @@
   </section>
 </main>
 <footer>
-  <form>
+  <form id="form">
     <input type="text" name="body" id="body" placeholder="Az: " [(ngModel)]="content" (submit)="$event.preventDefault()" />
-    <button type="submit" (click)="sendMessage()" [class.active]="content.trim().length >= 3">
+    <button type="submit" (click)="sendMessage()" [class.active]="content && content.trim().length >= 3">
       <i class="bi bi-send-fill"></i>
     </button>
   </form>

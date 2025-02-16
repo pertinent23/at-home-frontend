@@ -8,7 +8,7 @@
 
 <section class="exercise" *ngIf="isExerice">
   <div class="content-video">
-    <video src="video/my-video.mp4"></video>
+    <video [src]="source"></video>
   </div>
   <button type="button" (click)="onStart()">
     <i class="bi bi-play-circle-fill"></i>

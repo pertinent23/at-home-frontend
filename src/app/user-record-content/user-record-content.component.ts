@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-user-record-content',
@@ -9,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-record-content.component.scss'
 })
 export class UserRecordContentComponent implements OnInit {
-  source1: string = "video/my-video.mp4";
+  source1: string = "";
   source2: string = "";
 
   comment: string = '';
@@ -33,8 +34,33 @@ export class UserRecordContentComponent implements OnInit {
   minutes: number = 0;
   seconds: number = 0;
 
+  api = inject(ApiService);
+
   ngOnInit(): void {
     this.getCameraStream();
+    this.api.getMyFolder()
+      .then(res => res)
+      .then(res => {
+        switch(res.status) {
+          case 200:
+          case 201:
+          case 202:
+            this.source1 = res.data.video;
+            break;
+          
+          case 403:
+            window.location.href = "/login";
+            break;
+
+          default:
+            console.log(res.status);
+            break;
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        window.location.href = "/login";
+      });
   }
 
   resetTime(): void {
@@ -212,7 +238,26 @@ export class UserRecordContentComponent implements OnInit {
       const filereader = new FileReader();
 
       filereader.addEventListener('load', () => {
-        //console.log(filereader.result, this.result?.size);
+        this.api
+          .postRecord(filereader.result?.toString() || '', this.comment)
+          .then((res) => res)
+          .then((res) => {
+            switch(res.status) {
+              case 200:
+              case 201:
+              case 202:
+                window.location.href = "/home";
+                break;
+              
+              case 403:
+                window.location.href = "/login";
+                break;
+              
+              default:
+                console.log(res.status);
+            }
+          })
+          .catch((err) => console.log(err))
       });
 
       filereader.readAsDataURL(this.result);

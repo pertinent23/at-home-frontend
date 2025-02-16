@@ -1,3 +1,5 @@
+@import '../theme.scss';
+
 :host, .main-container{
   display: flex;
   height: 100%;
@@ -21,4 +23,52 @@
   flex-direction: column;
   width: 100%;
   height: auto;
+}
+
+.loader{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 500;
+  background-color: $isabelline;
+}
+
+.loader .loader-data1,
+.loader .loader-data2{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: 8px dashed transparent;
+  position: absolute;
+  background-color: transparent;
+}
+
+.loader .loader-data1{
+  border-top-color: $sandy-brown;
+  border-left-color: $sandy-brown;
+  transform: rotate(0deg);
+  animation: anim 2s ease-in-out 0s infinite;
+  animation-direction: normal;
+}
+
+.loader .loader-data2{
+  border-top-color: $sandy-brown;
+  border-left-color: $sandy-brown;
+  transform: rotate(0deg);
+  animation: anim 2s ease-in-out 0s infinite;
+  animation-direction: reverse;
+}
+
+@keyframes anim {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
