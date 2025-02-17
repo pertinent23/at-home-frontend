@@ -1,21 +1,23 @@
 <section>
     <app-nav-bar title="Admin" (clicked)="goBack()" />
 </section>
-<form>
+<form (submit)="$event.preventDefault()">
     <label for="video">
-        <i class="bi bi-folder-symlink-fill"></i>
+        <i class="bi bi-patch-plus-fill" *ngIf="!video"></i>
+        <i class="bi bi-play-btn-fill" *ngIf="video"></i>
     </label>
     <div class="loader" *ngIf="progressBar">
         <div class="loader-bar" [style.width]="progressBar + '%'"></div>
     </div>
-    <input type="file" name="video" id="video">
+    <input type="file" name="video" id="video" accept="video/mp4" (change)="chargeFile()">
     <label for="user">Selctionner un utilisateur</label>
     <select name="user" id="user">
         <option value="1">user1</option>
         <option value="1">user2</option>
         <option value="1">user3</option>
     </select>
-    <button type="submit">
+    <span class="error" *ngIf="error">{{ error }}</span>
+    <button type="button" (click)="onSubmit()">
         <i class="bi bi-send-check-fill"></i>
         <span>Envoyer</span>
     </button>

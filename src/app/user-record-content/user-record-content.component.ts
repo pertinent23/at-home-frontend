@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-user-record-content',
@@ -34,7 +35,8 @@ export class UserRecordContentComponent implements OnInit {
   minutes: number = 0;
   seconds: number = 0;
 
-  api = inject(ApiService);
+  private readonly api = inject(ApiService);
+  private readonly loader = inject(LoaderService);
 
   ngOnInit(): void {
     this.getCameraStream();
@@ -238,6 +240,7 @@ export class UserRecordContentComponent implements OnInit {
       const filereader = new FileReader();
 
       filereader.addEventListener('load', () => {
+        this.loader.show();
         this.api
           .postRecord(filereader.result?.toString() || '', this.comment)
           .then((res) => res)
@@ -254,10 +257,14 @@ export class UserRecordContentComponent implements OnInit {
                 break;
               
               default:
+                this.loader.hide();
                 console.log(res.status);
             }
           })
-          .catch((err) => console.log(err))
+          .catch((err) => {
+            this.loader.hide();
+            console.log(err);
+          })
       });
 
       filereader.readAsDataURL(this.result);

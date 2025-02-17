@@ -1,0 +1,88 @@
+{
+  "configVersion": 1,
+  "timestamp": 1739814694332,
+  "index": "/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/16.png",
+        "/icon.png",
+        "/icons/128.png",
+        "/icons/144.png",
+        "/icons/152.png",
+        "/icons/192.png",
+        "/icons/256.png",
+        "/icons/512.png",
+        "/icons/72.png",
+        "/icons/96.png",
+        "/index.csr.html",
+        "/main-WCWODSDY.js",
+        "/manifest.webmanifest",
+        "/polyfills-FFHMD2TL.js",
+        "/styles-FTIQHF7U.css",
+        "/video/my-video.mp4"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/logo.jpeg"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=Funnel\\+Display:wght@300\\.\\.800&amp;display=swap",
+        "https:\\/\\/cdn\\.jsdelivr\\.net\\/npm\\/bootstrap-icons@1\\.11\\.3\\/font\\/bootstrap-icons\\.min\\.css"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/16.png": "fa3554470e560307003d5a0b47a9a83daf27afb7",
+    "/icon.png": "0c29631aa51f57c0d0694e27d8e3ea9e08ea3ac1",
+    "/icons/128.png": "4d181eed85e89b66e7fbe4f0e927a55732ddf7fd",
+    "/icons/144.png": "7e51612d78f6006561d02b2684cbea6b08cca2b8",
+    "/icons/152.png": "9c6a91ebbd96a22498c5bcbddeb49e62e946c7d7",
+    "/icons/192.png": "cda1a7a70b2d2b0a9c2d0effdbdcfff00960ca03",
+    "/icons/256.png": "3f2c52f244ca9ca6e049c44dcfdfc8d78a2d1f0f",
+    "/icons/512.png": "db313c8bff789ffae2a75b00f9be8671cde8be04",
+    "/icons/72.png": "dd3c36ba9431bb69019a4c0721c83c80ccd20241",
+    "/icons/96.png": "b3ba020c618fb6ad6c0a2419254b2e4b1a1e1df2",
+    "/index.csr.html": "1253458ee6ff5eaa45ee5ea42a6d54919fe9ea8a",
+    "/logo.jpeg": "2868218c7c44dde84f5f1773b142ab37a3e72780",
+    "/main-WCWODSDY.js": "050716d3737079069ebc8c0e637d2c6c2e148d37",
+    "/manifest.webmanifest": "4ec0385361de543e32bada934d79549be3981b8f",
+    "/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/styles-FTIQHF7U.css": "21d43a3bd587904e82a7f8f1dc78601c5a972843",
+    "/video/my-video.mp4": "b5a9f77936f619d151120c5dea3f9251cd65091d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

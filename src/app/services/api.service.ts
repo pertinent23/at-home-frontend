@@ -63,8 +63,8 @@ export class ApiService {
     return this.axiosInstance.post(`/folders/record`, {data, comment});
   }
 
-  postVideo(video: string): Promise<AxiosResponse> {
-    return this.axiosInstance.post(`/folders/video`, {video});
+  postVideo(userId: string, video: string): Promise<AxiosResponse> {
+    return this.axiosInstance.post(`/folders/video/${userId}`, {data: video});
   }
 
   createUser(user: CreateUser): Promise<AxiosResponse> {

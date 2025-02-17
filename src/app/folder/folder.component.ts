@@ -39,8 +39,10 @@ export class FolderComponent implements OnInit {
         this.api.getFolderById(this.userId)
           .then(res => res)
           .then(res => {
-            this.source = res.data.record;
-            this.lastdate = res.data.recordedAt;
+            const date = new Date(res.data.recordedAt);
+            if (res.data.record != "NAN")
+              this.source = res.data.record;
+            this.lastdate = date.getDate()+'/'+date.getMonth()+'/'+date.getFullYear();
           })
           .catch(err => {
             console.log(err)

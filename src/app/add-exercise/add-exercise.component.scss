@@ -70,6 +70,7 @@ select{
     background-color: transparent;
     box-sizing: border-box;
     padding: 0px 10px;
+    display: none;
 }
 
 button{
@@ -94,6 +95,14 @@ button span{
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.09em;
+}
+
+.error{
+    font-size: 0.9em;
+    color: $red;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .loader{
