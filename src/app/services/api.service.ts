@@ -15,7 +15,7 @@ export class ApiService {
     this.axiosInstance = axios.create({
       baseURL: "https://at-home-078d6b8b36e8.herokuapp.com/api",
       withCredentials: true,
-      timeout: 15000,
+      timeout: 60000,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': this.cookie.get('token')

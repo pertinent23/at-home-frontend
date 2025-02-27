@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Folder } from '../app.types';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-user-main-content',
@@ -12,10 +13,13 @@ import { Folder } from '../app.types';
 export class UserMainContentComponent implements OnInit {
   isExerice: boolean = false;
   source: string = '';
-  api = inject(ApiService);
   user?: Folder;
 
+  private readonly api = inject(ApiService);
+  private readonly loader = inject(LoaderService);
+
   ngOnInit(): void {
+    this.loader.show();
     this.api.getMyFolder()
     .then((response) => {
       return response;
@@ -27,6 +31,7 @@ export class UserMainContentComponent implements OnInit {
           this.user = response.data;
           this.isExerice = response.data.video !== "NAN";
           this.source = response.data.video;
+          this.loader.hide();
           break;
         
         case 403:
