@@ -71,6 +71,10 @@ export class ApiService {
     return this.axiosInstance.post(`/users/create`, user);
   }
 
+  deleteUser(id: string): Promise<AxiosResponse> {
+    return this.axiosInstance.delete(`/users/delete/${id}`);
+  }
+
   getFolderList(): Promise<AxiosResponse<Folder[]>> {
     return this.axiosInstance.get('/folders/list');
   }

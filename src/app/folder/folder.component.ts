@@ -3,6 +3,7 @@ import { NavBarComponent } from '../ui/nav-bar/nav-bar.component';
 import { NgIf } from '@angular/common';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-folder',
@@ -13,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FolderComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private api = inject(ApiService);
+  private loader = inject(LoaderService);
 
   userId: string;
   firstname: string = 'Gaudu';
@@ -66,5 +68,23 @@ export class FolderComponent implements OnInit {
 
   addExercise() {
     window.location.href = `/add-exercise/${this.userId}`
+  }
+
+  deleteUser() {
+    if (confirm("Vous vous vraiment supprimer cet utilisateur ?")) {
+      this.loader.show();
+      this.api.deleteUser(this.userId)
+        .then(res => {
+          console.log(res);
+          window.location.href = "/folders";
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Erreur lors de la suppression de l'utilisateur.");
+        })
+        .finally(() => {
+          this.loader.hide();
+        });
+    }
   }
 }
